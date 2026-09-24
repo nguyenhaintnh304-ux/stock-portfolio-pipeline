@@ -1,0 +1,32 @@
+
+name: Daily Stock Pipeline
+
+on:
+  schedule:
+    # 15:30 giờ VN = 08:30 UTC, Thứ 2 - Thứ 6
+    - cron: '30 8 * * 1-5'
+  workflow_dispatch:  # cho phép bấm chạy tay
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run pipeline
+        env:
+          DB_HOST:     ${{ secrets.DB_HOST }}
+          DB_PORT:     ${{ secrets.DB_PORT }}
+          DB_USER:     ${{ secrets.DB_USER }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          DB_NAME:     ${{ secrets.DB_NAME }}
+        run: python pipeline.py

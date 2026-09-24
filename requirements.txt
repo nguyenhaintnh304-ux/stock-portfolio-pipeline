@@ -1,0 +1,4 @@
+vnstock
+pandas
+sqlalchemy
+psycopg2-binary
