@@ -1,5 +1,6 @@
-git+https://github.com/thinh-vu/vnstock.git@v4.0.4
-
-pandas
-sqlalchemy
-psycopg2-binary
+--extra-index-url https://vnstocks.com/api/simple
+vnai
+vnstock
+pandas>=2.0.0
+sqlalchemy>=2.0.0
+psycopg2-binary>=2.9.0
