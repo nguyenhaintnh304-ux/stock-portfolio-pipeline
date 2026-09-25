@@ -1,4 +1,4 @@
-vnstock
+vnstock==4.0.8
 pandas
 sqlalchemy
 psycopg2-binary
