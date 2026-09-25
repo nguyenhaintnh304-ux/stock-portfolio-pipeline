@@ -1,4 +1,5 @@
-git+https://github.com/thinh-vu/vnstock.git@v4.0.8
+git+https://github.com/thinh-vu/vnstock.git@v4.0.4
+
 pandas
 sqlalchemy
 psycopg2-binary
